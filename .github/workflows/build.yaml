@@ -7,7 +7,7 @@ jobs:
     name: build and install QtAseman
     steps:
       - name: install Qt
-      - uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@v2
       version: 5.15.2
       - name: clone QtAseman
       uses: actions/checkout@v2
