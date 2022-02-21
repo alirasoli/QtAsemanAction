@@ -6,16 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     name: build and install QtAseman
     steps:
-      -uses: jurplel/install-qt-action@v2
+      - name: install Qt
+      - uses: jurplel/install-qt-action@v2
       version: 5.15.2
-      -uses: actions/checkout@v2
+      - name: clone QtAseman
+      uses: actions/checkout@v2
       with:
         repository: Aseman-Land/QtAseman
         submodules: recursive
-      -run: |
+      - name: qmake
+      run: |
         mkdir build
         cd build
         qmake -r ..
-      -run: make -j2
-      -run: make install
+      - name: make
+      run: make -j2
+      - name: install
+      run: install
 
